@@ -71,14 +71,7 @@
                 });
         };
     </script>
-
-    <h1>Analyze image:</h1>
-    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
-    <br><br>
-    Image to analyze:
-    <input type="text" name="inputImage" id="inputImage" value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
-    <button onclick="processImage()">Analyze image</button>
-    <br><br>
+    <br>
     <div id="wrapper" style="width:1020px; display:table;">
         <div id="jsonOutput" style="width:600px; display:table-cell;">
             Response:
@@ -89,6 +82,8 @@
             Source image:
             <br><br>
             <img id="sourceImage" width="400" />
+            <br>
+            <h3 id="description">Loading description. . .</h3>
         </div>
     </div>
 </body>

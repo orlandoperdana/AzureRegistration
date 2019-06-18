@@ -7,7 +7,8 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=dicoding;AccountKey=KBlYJdOxttoOjNvxBioXtJBR7uxzbjohMgzXaCC9l7R2oHmzhwqTTpd9F6brtrBnFP28BV1eYhwEzRETV4QOOA==;";
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=dicoding;AccountKey=
+Tf4H3EVazgZChxYSwtTTX2e3IlXLQfzEjDcm+ngnUfFH+2HfPqpnFv9ZmJOa/Vk2ggJeejyzFXtkInOqcM9whA==;";
 $containerName = "ondocontainer";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);

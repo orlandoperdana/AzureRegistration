@@ -1,3 +1,15 @@
+<?php
+if (isset($_POST['submit'])) {
+	if (isset($_POST['url'])) {
+		$url = $_POST['url'];
+	} else {
+		header("Location: analisis.php");
+	}
+} else {
+	header("Location: analisis.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -59,6 +71,7 @@
                 .done(function(data) {
                     // Show formatted JSON on webpage.
                     $("#responseTextArea").val(JSON.stringify(data, null, 2));
+                    $("#description").text(data.description.captions[0].text);
                 })
 
                 .fail(function(jqXHR, textStatus, errorThrown) {
@@ -76,15 +89,15 @@
         <div id="jsonOutput" style="width:600px; display:table-cell;">
             Response:
             <br><br>
-            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px; readonly=""></textarea>
         </div>
         <div id="imageDiv" style="width:420px; display:table-cell;">
-            Source image:
-            <br><br>
-            <img id="sourceImage" width="400" />
-            <br>
-            <h3 id="description">Loading . . .</h3>
-        </div>
+		<b>Source Image:</b>
+		<br><br>
+		<img id="sourceImage" width="400" />
+		<br>
+		<h3 id="description">Loading description. . .</h3>
+	</div>
     </div>
 </body>
 

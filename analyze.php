@@ -8,7 +8,7 @@ use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=dicoding;AccountKey=KBlYJdOxttoOjNvxBioXtJBR7uxzbjohMgzXaCC9l7R2oHmzhwqTTpd9F6brtrBnFP28BV1eYhwEzRETV4QOOA==;";
-$containerName = "blobrizqi";
+$containerName = "ondocontainer";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 if (isset($_POST['submit'])) {
@@ -51,10 +51,10 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://smart-parkir.azurewebsites.net/">Home</a>
+                    <a class="nav-link" href="https://ondowebapp.azurewebsites.net/ondovision.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="https://smart-parkir.azurewebsites.net/analyze.php">Analisis Gambar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="https://ondowebapp.azurewebsites.net/analyze.php">Analisis Gambar<span class="sr-only">(current)</span></a>
                 </li>
         </div>
     </nav>

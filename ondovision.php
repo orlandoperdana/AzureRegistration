@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
             // If you use a free trial subscription key, you shouldn't need to change
             // this region.
             var uriBase =
-                "https://southeastasia.api.cognitive.microsoft.com/";
+                "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
 
             // Request parameters.
             var params = {
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
                 .done(function(data) {
                     // Show formatted JSON on webpage.
                     $("#responseTextArea").val(JSON.stringify(data, null, 2));
-                    //$("#description").text(data.description.captions[0].text);
+                    $("#description").text(data.description.captions[0].text);
                 })
 
                 .fail(function(jqXHR, textStatus, errorThrown) {

@@ -18,6 +18,9 @@ if (isset($_POST['submit'])) {
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 
+	<script language="javascript">
+        document.getElementById('analyze_btn').click(); 
+    </script>
 <body>
 
     <script type="text/javascript">
@@ -71,7 +74,7 @@ if (isset($_POST['submit'])) {
                 .done(function(data) {
                     // Show formatted JSON on webpage.
                     $("#responseTextArea").val(JSON.stringify(data, null, 2));
-                    $("#description").text(data.description.captions[0].text);
+                    //$("#description").text(data.description.captions[0].text);
                 })
 
                 .fail(function(jqXHR, textStatus, errorThrown) {
@@ -84,20 +87,29 @@ if (isset($_POST['submit'])) {
                 });
         };
     </script>
-    <br>
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
-            <br><br>
-            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px; readonly=""></textarea>
-        </div>
-        <div id="imageDiv" style="width:420px; display:table-cell;">
-		<b>Source Image:</b>
-		<br><br>
-		<img id="sourceImage" width="400" />
-		<br>
-		<h3 id="description">Loading description. . .</h3>
-	</div>
+<h1>Analisis Gambar:</h1>
+Tekan tombol <strong>Analisis image</strong> untuk memulai proses analisis gambar.
+<br><br>
+URL gambar:
+<input type="text" name="inputImage" id="inputImage"
+    value="<?php echo $url ?>" readonly />
+<button id="analyze_btn" onclick="processImage()">Analisis Gambar</button>
+<br><br>
+<script language="javascript">
+document.getElementById('analyze_btn').click(); 
+</script>
+<div id="wrapper" style="width:1020px; display:table;">
+    <div id="jsonOutput" style="width:600px; display:table-cell;">
+        Response:
+        <br><br>
+        <textarea id="responseTextArea" class="UIInput"
+                  style="width:580px; height:400px;"></textarea>
+    </div>
+    <div id="imageDiv" style="width:420px; display:table-cell;">
+        Source image:
+        <br><br>
+        <img id="sourceImage" width="400" />
+    </div>
     </div>
 </body>
 
